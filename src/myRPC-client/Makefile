@@ -27,6 +27,7 @@ clean:
 deb: clean all
 	mkdir -p deb_pkg/usr/bin
 	mkdir -p deb_pkg/DEBIAN
+	chmod 755 -R deb_pkg/
 	install -m 755 $(TARGET) deb_pkg/usr/bin/
 	echo "Package: myrpc-client" > deb_pkg/DEBIAN/control
 	echo "Version: 1.0-1" >> deb_pkg/DEBIAN/control
@@ -35,6 +36,6 @@ deb: clean all
 	echo "Architecture: amd64" >> deb_pkg/DEBIAN/control
 	echo "Maintainer: <likuraNT>" >> deb_pkg/DEBIAN/control
 	echo "Description: myRPC Client Application" >> deb_pkg/DEBIAN/control
-	fakeroot dpkg-deb --build deb_pkg ../deb/myrpc-client_1.0-1_amd64.deb
+	fakeroot dpkg-deb --build deb_pkg ../../deb/myrpc-client_1.0-1_amd64.deb
 	rm -rf deb_pkg
 
