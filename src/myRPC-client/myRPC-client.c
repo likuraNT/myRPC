@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
     int option_ind = 0;
     int sockfd = 0;
     int result = 0;
-    int port = 25565;
+    int port = 5555;
 
     const char* short_options = "c:h:p:sd";
 
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 
     sAddr.sin_family = AF_INET;
     sAddr.sin_port = htons(port);
-
+    inet_pton(AF_INET, host_ip, &sAddr.sin_addr);
 
     if (based_socket) {
         sockfd = socket(AF_INET, SOCK_STREAM, 0);

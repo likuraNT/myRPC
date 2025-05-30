@@ -1,5 +1,10 @@
 # Prerequisites
 *.d
+# Directories
+build
+deb
+bin
+obj
 
 # Object files
 *.o
