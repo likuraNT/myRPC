@@ -1,10 +1,10 @@
 # Prerequisites
 *.d
 # Directories
-build
-deb
-bin
-obj
+build*
+deb*
+bin*
+obj*
 
 # Object files
 *.o
@@ -55,4 +55,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Debian files
+*.deb
 
